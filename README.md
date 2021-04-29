@@ -28,7 +28,7 @@
   All you need to use this is a coding program like VS Code. 
 
   Preview: 
-  [Link to video]()
+  [Link to video](https://drive.google.com/file/d/17hwpK0HStY1L6CNjHz8D20KILGyZKkOj/view)
   
 
   ![Generated html preview]()
