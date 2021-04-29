@@ -1,9 +1,38 @@
-const Manager = require('../lib/Manager');
-const Engineer = require('../lib/Engineer');
-const Intern = require('../lib/Intern');
 
 
-function webpageTemplate(name, id, email, officeNumber) {
+function engineerCard(name, id, email, github) {
+    return `<div class="card mb-3 border-1 border-info rounded engineer m-1 p-0" style="max-width: 18rem;">
+    <div class="card-header text-info bg-dark bold">
+        <h4 class="card-title job">Engineer</h4>
+        <h5 class="card-title name">${name}</h5>
+    </div>
+    <div class="card-body text-info bg-light">
+        <ul class="card-text">
+            <li>ID: ${id}</span></li>
+            <li>Email: <a href="mailto:${email}">${email}</a></li>
+            <li>GitHub: <span class="github">${github}</span></li>
+        </ul>
+    </div>
+    </div>`
+}
+
+function internCard(name, id, email, school) {
+    return `<div class="card mb-3 border-1 border-info rounded intern m-1 p-0" style="max-width: 18rem;">
+<div class="card-header text-info bg-dark bold">
+    <h4 class="card-title job">Intern</h4>
+    <h5 class="card-title name">${name}</h5>
+</div>
+<div class="card-body text-info bg-light">
+    <ul class="card-text">
+        <li>ID: ${id}</li>
+        <li>Email: <a href="mailto:${email}">${email}</a></li>
+        <li>School: ${school}</li>
+    </ul>
+</div>
+</div>`
+}
+
+function webpageTemplate(name, id, email, officeNumber,github,school) {
     return `<!DOCTYPE html>
     <html lang="en">
     
@@ -34,42 +63,13 @@ function webpageTemplate(name, id, email, officeNumber) {
                     </ul>
                 </div>
             </div>
+            ${engineerCard(name, id, email, github)}
+            ${internCard(name, id, email, school)}
         </div> 
     </body>
     
     </html>`;
 }
 
-// function engineerCard(name, id, email, github) {
-//     return `<div class="card mb-3 border-1 border-info rounded engineer m-1 p-0" style="max-width: 18rem;">
-//     <div class="card-header text-info bg-dark bold">
-//         <h4 class="card-title job">Engineer</h4>
-//         <h5 class="card-title name">${name}</h5>
-//     </div>
-//     <div class="card-body text-info bg-light">
-//         <ul class="card-text">
-//             <li>ID: ${id}</span></li>
-//             <li>Email: <a href="mailto:${email}">${email}</a></li>
-//             <li>GitHub: <span class="github">${github}</span></li>
-//         </ul>
-//     </div>
-//     </div>`
-// }
-
-// function internCard(name, id, email, school) {
-//     return `<div class="card mb-3 border-1 border-info rounded intern m-1 p-0" style="max-width: 18rem;">
-// <div class="card-header text-info bg-dark bold">
-//     <h4 class="card-title job">Intern</h4>
-//     <h5 class="card-title name">${name}</h5>
-// </div>
-// <div class="card-body text-info bg-light">
-//     <ul class="card-text">
-//         <li>ID: ${id}</li>
-//         <li>Email: <a href="mailto:${email}">${email}</a></li>
-//         <li>School: ${school}</li>
-//     </ul>
-// </div>
-// </div>`
-// }
 
 module.exports = webpageTemplate;
